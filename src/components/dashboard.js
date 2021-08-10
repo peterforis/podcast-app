@@ -7,7 +7,6 @@ export default function Dashboard() {
     const [episodes, setEpisodes] = useState([]);
 
     const getEpisodes = () => {
-        //https://public-api.pod.co/podcasts/{podcast_slug}
         axios.get('https://public-api.pod.co/podcasts/create-reach-inspire/episodes')
             .then(response => {
                     if (response.status === 200) {
@@ -27,7 +26,7 @@ export default function Dashboard() {
         <div>
             <div>
                 {episodes.map((episode) => (
-                    <MenuItem key={episode.id} title={episode.title} author={episode.author} link={"link"}/>
+                    <MenuItem key={episode.id} title={episode.title} description={episode.description} duration={episode.duration} link={"link"}/>
                 ))}
             </div>
         </div>
