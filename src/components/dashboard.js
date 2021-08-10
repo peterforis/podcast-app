@@ -25,8 +25,9 @@ export default function Dashboard() {
     return (
         <div>
             <div>
+                <h1>These are the episodes</h1>
                 {episodes.map((episode) => (
-                    <MenuItem key={episode.id} title={episode.title} description={episode.description} duration={episode.duration} link={"link"}/>
+                    <MenuItem key={episode.id} title={episode.title} description={episode.description} duration={episode.duration} slugLink={episode.slug}/>
                 ))}
             </div>
         </div>

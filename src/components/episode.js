@@ -27,7 +27,7 @@ export default function Episode(props) {
     useEffect(() => getEpisode(), []);
 
     const playNext = () => {
-        
+
     }
 
     return (
