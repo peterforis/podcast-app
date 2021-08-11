@@ -13,7 +13,6 @@ export default function Dashboard() {
             .then(response => {
                     if (response.status === 200) {
                         setEpisodes(response.data.data);
-                        // console.log(response.data.data);
                     } else {
                         console.log("Error occured with code: ", response.status);
                     }
