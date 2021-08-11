@@ -27,7 +27,6 @@ export default function Episode(props) {
 
     return (
         <div className={"episode-container"}>
-            {/*TODO*/}
             <p>Title: {episode.title}</p>
             <p>Artist: {episode.author}</p>
             <ReactPlayer className={"episode-reactPlayer"} url={episode.url} height={"50px"}
