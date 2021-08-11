@@ -15,7 +15,7 @@ export default function Episode(props) {
             .then(response => {
                     if (response.status === 200) {
                         setEpisode(response.data.data);
-                        console.log(response.data.data.url)
+                        console.log(response.data.data)
                     } else {
                         console.log("Error occured with code: ", response.status);
                     }
@@ -31,12 +31,11 @@ export default function Episode(props) {
     }
 
     return (
-        <div>
+        <div className={"episode-container"}>
             {/*TODO*/}
             <p>Title: {episode.title}</p>
             <p>Artist: {episode.author}</p>
-            <p>Duration: {episode.duration} </p>
-            <ReactPlayer url={episode.url} height={"50px"} onEnded={playNext()} playing={false} controls={true}/>
+            <ReactPlayer className={"episode-reactPlayer"} url={episode.url} height={"50px"} onEnded={playNext()} playing={false} controls={true}/>
         </div>
     )
 }

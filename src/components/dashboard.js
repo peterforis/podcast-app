@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import MenuItem from "./menuItem";
+import calculateDuration from "./calculateDuration";
+import '../App.css';
 
 export default function Dashboard() {
 
@@ -11,7 +13,7 @@ export default function Dashboard() {
             .then(response => {
                     if (response.status === 200) {
                         setEpisodes(response.data.data);
-                        // console.log("200");
+                        // console.log(response.data.data);
                     } else {
                         console.log("Error occured with code: ", response.status);
                     }
@@ -23,13 +25,12 @@ export default function Dashboard() {
     useEffect(() => getEpisodes(), []);
 
     return (
-        <div>
-            <div>
-                <h1>These are the episodes</h1>
-                {episodes.map((episode) => (
-                    <MenuItem key={episode.id} title={episode.title} description={episode.description} duration={episode.duration} slugLink={episode.slug}/>
-                ))}
-            </div>
+        <div className={"dashboard-container"}>
+            <h1>List Of Episodes</h1>
+            {episodes.map((episode) => (
+                <MenuItem key={episode.id} title={episode.title} description={episode.description}
+                          duration={calculateDuration(episode.duration)} slugLink={episode.slug}/>
+            ))}
         </div>
     )
 }

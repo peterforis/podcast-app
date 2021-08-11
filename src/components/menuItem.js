@@ -6,12 +6,14 @@ function MenuItem(props) {
 
     const path = 'episodes/' + props.slugLink;
 
+    const descriptionText = props.description.replace(/<[^>]+>/g, '');
+
     return (
         <div className={"menuItem-container"}>
-            <h2>Title: {props.title}</h2>
+            {/*<h2>Title: {props.title}</h2>*/}
+            <Link to={path}><h2>{props.title}</h2></Link>
             <div>Duration: {props.duration}</div>
-            <div>Description: {props.description}</div>
-            <Link to={path}>Check details</Link>
+            <p className={"menuItem-text"}>Description: {descriptionText}</p>
         </div>
     )
 }

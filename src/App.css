@@ -1,13 +1,29 @@
-.app-container {
+/*.app-container {*/
+/*    text-align: center;*/
+/*}*/
+
+.dashboard-container {
     text-align: center;
 }
 
 .menuItem-container {
     margin: auto;
-    width: 80%;
-    border: 1px solid black;
-    text-align: left;
+    width: 60%;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    text-align: center;
 }
-.menuItem-link {
-    text-decoration: underline;
+.menuItem-text {
+    text-align: justify;
+}
+
+.episode-container{
+    margin: auto;
+    /*border: 1px solid black;*/
+    text-align: center;
+    width: 60%;
+}
+.episode-reactPlayer{
+    transform: none;
+    margin: auto;
 }
